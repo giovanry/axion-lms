@@ -1,0 +1,33 @@
+# Axion LMS - Dependencies
+
+# Backend Web API Framework
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+starlette>=0.36.0
+python-multipart>=0.0.9
+aiofiles>=23.2.1
+websockets>=12.0
+
+# Database & Data Modeling
+sqlalchemy>=2.0.28
+sqlmodel>=0.0.16
+pydantic>=2.6.4
+pydantic-settings>=2.2.1
+python-dotenv>=1.0.0
+
+# HTTP Clients & External Integrations
+httpx>=0.27.0
+requests>=2.31.0
+beautifulsoup4>=4.12.3
+kaggle>=1.6.6
+
+# Scientific Computing & Machine Learning Sandbox
+numpy>=1.26.0
+pandas>=2.2.0
+scipy>=1.12.0
+scikit-learn>=1.4.0
+matplotlib>=3.8.0
+
+# Testing & Quality Assurance
+pytest>=8.1.1
+pytest-asyncio>=0.23.0
