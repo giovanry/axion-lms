@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-root: #181818;
+  --bg-surface: #1e1e1e;
+  --bg-elevated: #252526;
+  --bg-widget: #2d2d2d;
+  --border-subtle: #2b2b2b;
+  --border-default: #333333;
+  --border-strong: #3e3e3e;
+  --accent-primary: #007acc;
+  --accent-hover: #1f8ad2;
+  --accent-muted: rgba(0, 122, 204, 0.16);
+}
+
+@layer base {
+  *, ::before, ::after {
+    border-color: #333333;
+  }
+}
+
+body {
+  background-color: var(--bg-root);
+  color: #cccccc;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  font-weight: 450;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Custom technical typography */
+.text-page-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.text-section-header {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.text-body {
+  font-size: 13px;
+  font-weight: 450;
+  line-height: 19px;
+}
+
+.text-label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.text-meta {
+  font-size: 11px;
+  font-weight: 450;
+  line-height: 14px;
+}
+
+/* Accessible focus ring following antislop R-32 */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 1px;
+}
+
+/* Minimalist technical scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-root);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+@keyframes bubblePop {
+  0% {
+    transform: scale(0.7) translateY(20px);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.03) translateY(-2px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-bubble-pop {
+  animation: bubblePop 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: bottom right;
+}

@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  execution-sandbox:
+    build:
+      context: .
+      dockerfile: Dockerfile.sandbox
+    container_name: olympus-sandbox
+    ports:
+      - "8888:8888"
+    volumes:
+      - ../data/datasets:/workspace/datasets
+      - ../data/notebooks:/workspace/notebooks
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    restart: unless-stopped
